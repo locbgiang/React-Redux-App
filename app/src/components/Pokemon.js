@@ -14,6 +14,8 @@ const Pokemon = props => {
             {props.isFetching && (
                 <Loader type="Puff" color="#00BFFF" height={100} width={100} />
             )}
+
+            <img src={props.image} alt={props.name} />
             {props.name && <h3>{props.name}</h3>}
             {props.error && <p className="error">{props.error}</p>}
             <button onClick={()=>props.fetchPokemon(props.num-1)}>PREVIOUS POKEMON</button>
@@ -26,7 +28,8 @@ const mapStateToProps = state => {
         name: state.pokemon.name,
         isFetching: state.pokemon.isFetching,
         error: state.pokemon.error,
-        num: state.pokemon.num
+        num: state.pokemon.num,
+        image: state.pokemon.image
     };
 };
 export default connect(

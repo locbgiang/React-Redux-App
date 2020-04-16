@@ -2,7 +2,8 @@ const initialState = {
     name: '',
     isFetching: false,
     error: '',
-    num: ''
+    num: '',
+    image: ''
 };
 
 export const pokemonReducer = ( state=initialState, action ) => {
@@ -18,7 +19,8 @@ export const pokemonReducer = ( state=initialState, action ) => {
             isFetching: false,
             name: action.payload.name,
             error: '',
-            num: action.payload.id
+            num: action.payload.id,
+            image: action.payload.sprites.front_default
           };
         case 'FETCH_POKEMON_FAILURE':
           return {
