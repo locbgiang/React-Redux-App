@@ -14,7 +14,8 @@ const Pokemon = props => {
             {props.isFetching && (
                 <Loader type="Puff" color="#00BFFF" height={100} width={100} />
             )}
-
+            
+            {props.num}
             <img src={props.image} alt={props.name} />
             {props.name && <h3>{props.name}</h3>}
             {props.error && <p className="error">{props.error}</p>}
